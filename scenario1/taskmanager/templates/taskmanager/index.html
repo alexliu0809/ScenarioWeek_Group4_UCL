@@ -1,0 +1,10 @@
+{% if latest_todo_list %}
+<ul>
+    {% for Title in latest_todo_list %}
+    <li><p> hello world</p></li>
+    <li><a href="/taskmanager/{{ Todolist.id }}/">{{ Todolist.Title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No taskmanagers are available.</p>
+{% endif %}

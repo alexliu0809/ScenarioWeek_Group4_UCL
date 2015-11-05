@@ -15,6 +15,8 @@ class TodolistAdmin(admin.ModelAdmin):
 #                 ]
     inlines = [TaskInline]
     list_display = ('Title', 'pub_date')
+    list_filter = ['pub_date']
+    search_fields = ['Title']
 
 admin.site.register(Todolist, TodolistAdmin)
 admin.site.register(Task)

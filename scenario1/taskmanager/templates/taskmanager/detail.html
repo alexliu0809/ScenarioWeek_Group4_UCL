@@ -1,0 +1,8 @@
+<h1>{{ todolist.Title }}</h1>
+<h2>{{ todolist.Description}}</h2>
+<p><li>{{ Task.Task_text }}</li></p>
+<ul>
+    {% for Task in todolist.Task_set.all %}
+    <li>{{ Task.Task_text }}</li>
+    {% endfor %}
+</ul>
