@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taskmanager/style.css' %}" />
+
+  <title>{% block title %}Log in success{% endblock %}</title>
+
+  <h2>You're now logged in <FONT COLOR="RED">{{full_name}}</FONT>!</h2>
+  <p>Click <a href="/accounts/logout/">here</a> to logout.</p>
+  
+  <p>Click <a href="/taskmanager/">here</a> to proceed to the taskmanager.</p>
+
+{% endblock %}

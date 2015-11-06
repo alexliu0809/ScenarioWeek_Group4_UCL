@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taskmanager/style.css' %}" />
+
+  <title>{% block title %}login page{% endblock %}</title>
+
+  {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+
+  <form action="/accounts/auth/" method="post">{% csrf_token %}
+    <font size="5">Please enter your </font><br>
+    <label for="username">User name:</label>
+    <input type="text" name="username" value="" id="username">
+    <p>and
+    <p>
+    <label for="password"> Password :</label>
+    <input type="password" name="password" value="" id="password">
+
+    <input type="submit" value="login" />
+    
+    <p>Click <a href="/accounts/register/">here</a> to register</p>
+  </form>
+
+{% endblock %}

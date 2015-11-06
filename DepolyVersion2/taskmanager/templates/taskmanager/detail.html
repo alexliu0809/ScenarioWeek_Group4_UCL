@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taskmanager/style.css' %}" />
+
+<h1>{{ todolist.Title }}</h1>
+<h2>{{ todolist.Description}}</h2>
+
+<ul>
+    {% for task in todolist.task_set.all %}
+    <li>{{ task.Task_text }}</li>
+    {% endfor %}
+</ul>
+
+<p><a href="/admin/taskmanager/todolist/{{ todolist.id }}/">Edit</a></p>
+
+<p><a href="/admin/taskmanager/todolist/{{ todolist.id }}/delete/">Delete</a></p>
+
+<p><a href="/taskmanager/">Go Back</a></p>
