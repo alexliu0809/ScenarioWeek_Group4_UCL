@@ -16,6 +16,11 @@ echo "entering folder"
 cd $localFolder
 echo "cloning the repository"
 git clone $repository
+echo $pwd
+echo "starting up the server"
+cd ./ScenarioWeek_Group4_UCL
+cd ./DepolyVersion2
+python manage.py runserver
 #echo "initializing git folder"
 #git -C init
 #echo "connecting to remote server"
