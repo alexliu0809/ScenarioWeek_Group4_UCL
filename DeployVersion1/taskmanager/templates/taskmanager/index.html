@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taskmanager/style.css' %}" />
+
+{% if latest_todo_list %}
+<h1> This is the main page </h1>
+<ul>
+    {% for todolist in latest_todo_list %}
+<!--    <li><a href="/taskmanager/{{ todolist.id }}/">{{ todolist.Title }}</a></li>-->
+    <li><a href="{% url 'detail' todolist.id %}">{{ todolist.Title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No taskmanagers are available.</p>
+
+{% endif %}
+
+<p>Click <a href="/admin/taskmanager/todolist/add/">here</a> to add a todo list</p>
+
+<p>Click <a href="/accounts/logout">here</a> to logout</p>

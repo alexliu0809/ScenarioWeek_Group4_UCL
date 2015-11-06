@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'taskmanager/style.css' %}" />
+
+  <h2>Logged out! See you soon</h2>
+  <p>Click <a href="/accounts/login/">here</a> to login again</p>
+
+{% endblock %}
